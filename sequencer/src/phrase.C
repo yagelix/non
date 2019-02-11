@@ -26,7 +26,7 @@
 using namespace MIDI;
 
 vector <phrase*> phrase::_phrases;
-signal <void> phrase::signal_create_destroy;
+sigc::signal <void> phrase::signal_create_destroy;
 
 phrase::phrase ( void )
 {

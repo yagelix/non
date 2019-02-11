@@ -53,7 +53,7 @@ class pattern : public Grid
 
 public:
 
-    static signal <void> signal_create_destroy;
+    static sigc::signal <void> signal_create_destroy;
 
     Mapping mapping;
 

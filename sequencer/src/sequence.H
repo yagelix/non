@@ -59,7 +59,7 @@ class sequence : public trackable {
 
 public:
 
-    signal <void> signal_new_song;
+	sigc::signal <void> signal_new_song;
 
     sequence( void );
 

@@ -24,7 +24,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/vfs.h>
+#if defined(__FreeBSD__) || defined(__DragonFly__)
+	#include <sys/param.h>
+	#include <sys/mount.h>
+#else 
+	#include <sys/vfs.h>
+#endif 
 
 unsigned long
 modification_time ( const char *file )

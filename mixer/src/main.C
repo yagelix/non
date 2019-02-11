@@ -60,6 +60,10 @@
 #include <signal.h>
 #include <unistd.h>
 
+#ifndef __GLIBC__
+#include <libgen.h>
+#endif
+
 #include "FL/Fl.H"
 #include "FL/x.H"
 #include "FL/Fl_PNG_Image.H"

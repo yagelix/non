@@ -147,8 +147,8 @@ public:
 
     void draw_notes ( draw_note_func_t draw_note, void *userdata ) const;
 
-    signal <void> signal_events_change;
-    signal <void> signal_settings_change;
+	sigc::signal <void> signal_events_change;
+	sigc::signal <void> signal_settings_change;
 
     Viewport viewport;                                          /* used by the Canvas */
 

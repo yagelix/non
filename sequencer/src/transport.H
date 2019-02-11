@@ -37,9 +37,9 @@ class Transport : public trackable {
 
 public:
 
-    signal <int, double> signal_tempo_change;
-    signal <int, double> signal_bpb_change;
-    signal <int, double> signal_beat_change;
+	sigc::signal <int, double> signal_tempo_change;
+	sigc::signal <int, double> signal_bpb_change;
+	sigc::signal <int, double> signal_beat_change;
 
     bool master;                                                /* are we driving the transport? */
     bool rolling;

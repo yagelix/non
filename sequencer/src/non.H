@@ -87,8 +87,8 @@ struct song_settings
 
     char *filename;
 
-    signal <void> signal_dirty;                                 /* emitted when first dirtied */
-    signal <void> signal_clean;                                 /* emitted when first cleaned */
+	sigc::signal <void> signal_dirty;                                 /* emitted when first dirtied */
+	sigc::signal <void> signal_clean;                                 /* emitted when first cleaned */
 
     bool _dirty;
 

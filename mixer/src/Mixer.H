@@ -24,6 +24,7 @@
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Scroll.H>
 #include <FL/Fl_Pack.H>
+#include <FL/fl_draw.H>
 #include "Mixer_Strip.H"
 
 #include "Thread.H"

@@ -21,7 +21,7 @@
 
 #include <pthread.h>
 
-const pthread_mutex_t _mutex_initializer = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
+//const pthread_mutex_t _mutex_initializer = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
 
 class Mutex
 {
@@ -32,8 +32,12 @@ public:
 
     Mutex ( )
         {
-//            pthread_mutex_init( &_lock, NULL );
-            _lock = _mutex_initializer;
+			pthread_mutexattr_t attr;
+			pthread_mutexattr_init(&attr);
+			pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+            pthread_mutex_init(&_lock, &attr);
+			pthread_mutexattr_destroy(&attr);
+            //_lock = _mutex_initializer;
         }
 
     virtual ~Mutex ( )

@@ -34,7 +34,7 @@ vector <pattern*> pattern::_patterns;
 int pattern::_solo;
 int pattern::_pattern_recording;
 
-signal <void> pattern::signal_create_destroy;
+sigc::signal <void> pattern::signal_create_destroy;
 
 pattern::pattern ( void )
 {

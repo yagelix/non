@@ -23,6 +23,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#ifndef __GLIBC__
+#include <stdlib.h>
+#endif
+
 extern char * program_invocation_short_name;
 
 void
@@ -38,8 +42,12 @@ warnf ( warning_t level,
 		"assertion", "\033[1;31m"
 	};
 
-        module = program_invocation_short_name;
 
+#ifdef __GLIBC__
+        module = program_invocation_short_name;
+#else
+		module = getprogname();
+#endif
 	if ( module )
 		fprintf( stderr, "[\033[1;30m%s\033[0m] ", module );
 #ifndef NDEBUG

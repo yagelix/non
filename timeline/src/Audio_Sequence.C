@@ -42,6 +42,11 @@ using namespace std;
 
 #include "string_util.h"
 
+#if defined(__FreeBSD__) || defined(__DragonFly__)
+#include <libgen.h>
+#endif
+
+
 
 
 const char *

@@ -25,7 +25,7 @@ def configure(conf):
     conf.load('compiler_cxx')
     conf.load('gnu_dirs')
 
-    conf.check(header_name='ladspa.h', define_name='HAVE_LADSPA_H', mandatory=True)
+    conf.check(header_name='ladspa.h', includes=['/usr/local/include', '/usr/include'], define_name='HAVE_LADSPA_H', mandatory=True)
     conf.check_cfg(package='lrdf', uselib_store='LRDF',args="--cflags --libs",
                       atleast_version='0.4.0', mandatory=True)
 
@@ -70,7 +70,7 @@ src/SpectrumView.C
 src/Spatialization_Console.C
 ''',
               target       = 'non-mixer',
-              includes     = ['.', 'src', '..', '../nonlib'],
+              includes     = ['.', 'src', '/usr/local/include/ntk', '..', '../nonlib'],
               use = ['nonlib', 'fl_widgets'],
               uselib = [ 'JACK', 'LIBLO', 'LRDF', 'NTK', 'NTK_IMAGES', 'PTHREAD', 'DL', 'M' ],
               install_path = '${BINDIR}')

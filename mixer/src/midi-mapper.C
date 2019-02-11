@@ -43,6 +43,11 @@ using namespace MIDI;
 
 #include <nsm.h>
 
+#ifndef __GLIBC__
+#include <libgen.h>
+#endif
+
+
 #undef APP_NAME
 const char *APP_NAME = "non-midi-mapper";
 #undef APP_TITLE

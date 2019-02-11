@@ -43,6 +43,7 @@
 #include "debug.h"
 #include <unistd.h>
 #include <sys/types.h>
+#include <limits.h>
 
 #include "OSC/Endpoint.H"
 #include <lo/lo.h>

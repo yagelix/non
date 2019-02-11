@@ -129,7 +129,7 @@ public:
 
     enum { OFF, ON, TOGGLE };
 
-    signal <void> signal_settings_change;
+	sigc::signal <void> signal_settings_change;
 
     Canvas ( int X, int Y, int W, int H, const char *L=0 );
     virtual ~Canvas ( );
